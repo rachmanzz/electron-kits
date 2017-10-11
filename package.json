@@ -1,0 +1,33 @@
+{
+  "name": "electron-kits-start",
+  "version": "0.0.1",
+  "description": "electron stater kits",
+  "main": "config/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rachmanzz/electron-kits-start.git"
+  },
+  "keywords": [
+    "electron",
+    "kits",
+    "desktop"
+  ],
+  "devDependencies": {
+    "electron": "^1.7.8",
+    "electron-packager": "^9.1.0"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "knex": "^0.13.0",
+    "lodash": "^4.17.4"
+  },
+  "author": "Muhammad Abdurrahman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rachmanzz/electron-kits-start/issues"
+  },
+  "homepage": "https://github.com/rachmanzz/electron-kits-start#readme"
+}
