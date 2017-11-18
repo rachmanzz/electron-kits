@@ -1,9 +1,7 @@
 const ipc = require('electron').ipcMain
 const control = {}
-class broadcaster {
-  constructor (w){
-    console.log(w);
-  }
+class Broadcaster {
+  constructor (){}
   setWindow (win) {
       this.win = win
   }
@@ -28,3 +26,5 @@ class broadcaster {
     })
   }
 }
+
+module.exports = Broadcaster
