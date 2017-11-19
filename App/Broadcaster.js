@@ -1,5 +1,5 @@
 const ipc = require('electron').ipcMain
-const control = {}
+const control = _CONTROL_ACCESS_$$
 class Broadcaster {
   constructor (){}
   setWindow (win) {
@@ -11,13 +11,17 @@ class Broadcaster {
       if (typeof callback !== 'undefined' && typeof callback === 'string') {
         if (/[\w\/_]+\.[\w\/_]+/.test(callback)) {
           const fileExp = callback.match(/([\w\/_]+)\.([\w\/_]+)/i)
+          // fileExp[1] -> control file or dirname and file
           if (typeof control[fileExp[1]] === 'undefined') {
+            // Call require file of control
             const Modules = require(
               './Controls/' + fileExp[1]
             )
+            // register filename to control object -> control[filename] = module instance
             control[fileExp[1]] = new Modules(this.win)
           }
-          control[fileExp[1]][fileExp[1]](ev, data) // call method
+          // control[filename] require for call module instance, and [fileExp[2]] to call require method
+          control[fileExp[1]][fileExp[2]](ev, data) // call method
           return
         }
       } else {

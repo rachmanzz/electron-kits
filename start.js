@@ -1,6 +1,6 @@
 const path = require('path')
 const url = require('url')
-
+global._CONTROL_ACCESS_$$ = {} // register global control broadcaster
 global.Gets = (Im) => {
   const regex = /([\w]+):([-\w/]+)/
     if (!regex.test(Im)) {
