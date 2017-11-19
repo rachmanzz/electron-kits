@@ -2,11 +2,10 @@
 easy build electron desktop app
 
 ## Usage
-Using NPM:
-`npm install rachmanzz/electron-kits-start`
-
 Using Git:
-`git clone https://github.com/rachmanzz/electron-kits-start.git`
+`git clone https://github.com/rachmanzz/electron-kits-start.git yourproject`
+
+`cd yourproject && npm install`
 
 ## Routing and Broadcast Message
 File: App/Route
@@ -41,5 +40,53 @@ Create File: App/Controls/First.js
       }
       run (event, res) {
         // your logic code here
+        // send to view
+        e.sender.send('send-to-view-back', 'value')
       }
     }
+
+## Broadcast Message
+from Views html template, add javascript code in your html like this
+
+    const ipc = require('electron').ipcRenderer
+    // first-broadcast-route look at route
+    // send Broadcast message
+    ipc.send('first-broadcast-route', 'value')
+    // get Broadcast message from control resource
+    ipc.on('send-to-view-back', (e, data) => {
+      console.log(data)
+    })
+
+## Vue integations
+
+change folder Config to config
+
+`npm install --global vue-cli`
+
+`vue init webpack ./`
+
+`npm install`
+
+### vue configuration
+
+`add "main": "config/main.js" to package.json`
+
+config/index.js
+
+change this line:
+
+
+    build: {
+    index: path.resolve(__dirname, '../Views/Index.html'),
+
+    // Paths
+    assetsRoot: path.resolve(__dirname, '../Views'),
+    assetsSubDirectory: 'static',
+    assetsPublicPath: '',
+
+
+build/webpack.prod.conf.js
+
+add this line:
+
+  `target: 'electron-renderer',`
