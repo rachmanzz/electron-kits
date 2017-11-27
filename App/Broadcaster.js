@@ -25,7 +25,7 @@ class Broadcaster {
           return
         }
       } else {
-        typeof callback !== 'undefined' && typeof callback !== 'function' && callback(ev, data)
+        typeof callback !== 'undefined' && typeof callback === 'function' && callback(ev, data)
       }
     })
   }
