@@ -62,4 +62,5 @@ from Views html template, add javascript code in your html like this
 change folder Config to config
 
 `npm install --global vue-cli`
+
 `vue init rachmanzz/vuelectron yourproject`
