@@ -62,31 +62,4 @@ from Views html template, add javascript code in your html like this
 change folder Config to config
 
 `npm install --global vue-cli`
-
-`vue init webpack ./`
-
-`npm install`
-
-### vue configuration
-
-`add "main": "config/main.js" to package.json`
-
-config/index.js
-
-change this line:
-
-
-    build: {
-    index: path.resolve(__dirname, '../Views/Index.html'),
-
-    // Paths
-    assetsRoot: path.resolve(__dirname, '../Views'),
-    assetsSubDirectory: 'static',
-    assetsPublicPath: '',
-
-
-build/webpack.prod.conf.js
-
-add this line:
-
-  `target: 'electron-renderer',`
+`vue init rachmanzz/vuelectron yourproject`
