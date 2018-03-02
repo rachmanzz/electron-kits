@@ -1,4 +1,4 @@
-# electron-kits-start
+# electron kits
 easy build electron desktop app
 
 ## Usage
